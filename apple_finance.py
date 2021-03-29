@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 import pandas
 from urllib.request import urlopen
-from io import StringIO, BytesIO
+from io import StringIO
 
 
 import logging
@@ -19,15 +19,15 @@ from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 
 
 s3_hook = S3Hook(aws_conn_id="my_conn_S3", region_name="eu-central-1")
-bucket_name = "apple-data-airflow"
-region = "eu-central-1"
-api_key = "79b6e05dbc6900b3b6e19680b5eff78f"
+bucket_name = "YOU_BUCKET_NAME"
+region = "AWS_REGION"
+api_key = "APPLE_API_KEY"
 
 default_args = {
     'owner': 'admin',
     'depends_on_past': False,
     #'start_date': datetime.now(),
-    #'email': ['dieguimagassa10@gmail.com'],
+    #'email': ['name@email.com'],
     #'email_on_failure': True,
     #'email_on_retry': False,
     'retries': 2,
